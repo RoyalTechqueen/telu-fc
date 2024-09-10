@@ -71,7 +71,7 @@ const Header: React.FC = () => {
         </button>
       </div>
       <div
-        className={`fixed top-0 left-0 h-full w-full bg-white shadow-lg transform ${
+        className={`fixed top-0 left-0 h-full w-full bg-yellow-100 shadow-lg transform ${
           showMenu ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 ease-in-out sm:hidden`}
       >
