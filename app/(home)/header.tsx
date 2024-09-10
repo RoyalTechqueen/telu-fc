@@ -111,11 +111,6 @@ const Header: React.FC = () => {
             href="#contact"
             className="text-lg font-medium"
             onClick={() => setShowMenu(false)}
-          ></a>
-          <a
-            href="#contact"
-            className="text-lg font-medium"
-            onClick={() => setShowMenu(false)}
           >
             Gallery
           </a>
