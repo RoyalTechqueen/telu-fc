@@ -85,7 +85,15 @@ const Header: React.FC = () => {
           </button>
         </div>
         <nav className="flex flex-col items-center space-y-6 p-6">
-          {/* <img src="/logo2.png" alt="logo" className="h-20 mb-4" /> */}
+          <div className="flex items-center">
+            <Image
+              src="/telu.png"
+              alt="logo"
+              className="rounded-xl"
+              width={75}
+              height={75}
+            />
+          </div>
           <a
             href="#home"
             className="text-lg font-medium"
