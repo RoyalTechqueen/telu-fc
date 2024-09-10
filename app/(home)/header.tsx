@@ -101,14 +101,14 @@ const Header: React.FC = () => {
             About
           </Link>
           <Link
-            href="#about"
+            href="#programs"
             className="text-lg font-medium"
             onClick={() => setShowMenu(false)}
           >
             Programs
           </Link>
           <a
-            href="#contact"
+            href="#gallery"
             className="text-lg font-medium"
             onClick={() => setShowMenu(false)}
           >
@@ -129,7 +129,7 @@ const Header: React.FC = () => {
         </Link>
 
         <Link href="/signup">
-          <span className="mt-4 block w-full px-4 py-3 text-center rounded-full bg-green-600 text-white hover:bg-green-800">
+          <span className="mt-4 block w-full px-4 py-3 text-center rounded-full bg-yellow-600 text-white hover:bg-yellow-800">
             Get Started
           </span>
         </Link>
