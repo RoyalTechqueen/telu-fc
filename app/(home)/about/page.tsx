@@ -12,8 +12,8 @@ export default function AboutUs() {
             src="/telu.png"
             alt="logo"
             className="rounded-xl"
-            width={100}
-            height={100}
+            width={70}
+            height={70}
           />
         </Link>
       </div>
