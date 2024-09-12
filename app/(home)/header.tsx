@@ -43,7 +43,6 @@ const Header: React.FC = () => {
         <nav className="hidden lg:flex space-x-8 items-center text-xl">
           <Link href="#home">Home</Link>
           <Link href="#about">About</Link>
-          <Link href="#programs">Programs</Link>
           <Link href="#players">Players</Link>
           <Link href="#gallery">Gallery</Link>
           <Link href="#contact">Contact</Link>
@@ -118,13 +117,7 @@ const Header: React.FC = () => {
           >
             About
           </Link>
-          <Link
-            href="#programs"
-            className="text-lg font-medium"
-            onClick={() => setShowMenu(false)}
-          >
-            Programs
-          </Link>
+          
           <Link
             href="#players"
             className="text-lg font-medium"
