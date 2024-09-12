@@ -61,13 +61,13 @@ export default function Application() {
             src="/telu.png"
             alt="logo"
             className="rounded-xl"
-            width={100}
-            height={100}
+            width={70}
+            height={70}
           />
         </Link>
       </div>
       <div className="max-w-screen-lg mx-auto px-4 text-center">
-        <h2 className="text-primary text-4xl font-bold uppercase mb-8">
+        <h2 className="text-primary text-4xl font-bold uppercase mb-8 mt-12 lg:mt-2">
           Apply to Join Telu FC
         </h2>
         <p className="text-gray-700 mb-12">
