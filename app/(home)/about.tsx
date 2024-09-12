@@ -30,13 +30,13 @@ export default function About() {
                   Who are we?
                 </h3>
                 <p className="mt-8 text-lg">
-                  <strong>Telu</strong> Football Academy, based in Iwo Osun,
+                  <strong>Telu</strong> Football Club, based in Iwo Osun,
                   Nigeria, is a top-rated professional football club founded in
                   2019. It has quickly gained a reputation as one of the best
                   football academies in the country, participating in various
                   tournaments. The academy was established by professional
                   football experts to nurture and showcase fresh football
-                  talent. Alamu FC Academy is not just about football; it also
+                  talent. Alamu FC  is not just about football; it also
                   emphasizes education and religious values, ensuring players
                   can advance their football careers without compromising
                   academics or faith. Catering to players aged 12 to 18, the
@@ -65,7 +65,7 @@ export default function About() {
                   Our Mission
                 </h3>
                 <h6 className="mt-8 text-lg">
-                  Telu Football Academy is dedicated to developing future
+                  Telu Football Club is dedicated to developing future
                   football stars with top-notch training kits and a focus on
                   both educational and religious excellence. Their mission is to
                   improve the lives of young talents, providing them with
