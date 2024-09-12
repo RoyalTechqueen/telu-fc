@@ -165,14 +165,14 @@ export default function PlayersPage() {
             src="/telu.png"
             alt="logo"
             className="rounded-xl"
-            width={100}
-            height={100}
+            width={70}
+            height={70}
           />
         </Link>
       </div>
       <div className="p-4">
         <div className="max-w-screen-xl mx-auto px-4">
-          <h2 className="text-yellow-500 text-4xl mt-8 font-bold uppercase mb-4 text-center">
+          <h2 className="text-yellow-500 text-4xl mt-12 lg:mt-2 font-bold uppercase mb-4 text-center">
             Our Players
           </h2>
 
