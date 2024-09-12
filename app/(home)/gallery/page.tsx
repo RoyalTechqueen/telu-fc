@@ -10,13 +10,13 @@ export default function Gallery() {
             src="/telu.png"
             alt="logo"
             className="rounded-xl"
-            width={100}
-            height={100}
+            width={70}
+            height={70}
           />
         </Link>
       </div>
       <div className="p-4">
-        <h2 className="text-primary text-3xl font-bold uppercase text-center mt-2 mb-4">
+        <h2 className="text-primary text-3xl font-bold uppercase text-center mt-2 mb-4 mt-12 lg:mt-2">
           Gallery
         </h2>
         <p className="text-gray-700 mb-12 text-center">
