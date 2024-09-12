@@ -32,10 +32,10 @@ export default function Hero() {
 
       <div className="hidden lg:block lg:w-1/3">
         <Image
-          src="/22.jpg"
+          src="/telu3.jpg"
           alt="Football"
-          width={800}
-          height={500}
+          width={700}
+          height={700}
           className="object-cover opacity-80 rounded-lg"
         />
       </div>
