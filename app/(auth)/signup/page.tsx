@@ -6,24 +6,50 @@ import Image from "next/image";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookF } from "react-icons/fa";
+import { signUpWithEmail } from "./action";
+import { useRouter } from "next/navigation";
 
 const SignUp: React.FC = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [message, setMessage] = useState<string | null>(null);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+
+  const router = useRouter();
 
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
   };
 
-  const handleSignUp = (event: React.FormEvent) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSignUp = async (event: React.FormEvent) => {
     event.preventDefault();
     setLoading(true);
+    setError(null);
+    setMessage(null);
 
-    // Simulate an async SignUp process
-    setTimeout(() => {
+    const { name, email, password } = formData;
+
+    const { message, error } = await signUpWithEmail(email, password, name);
+
+    if (error) {
+      setError(error);
       setLoading(false);
-      // Redirect to the dashboard after SignUp
-    }, 2000);
+    } else {
+      setMessage(message);
+      setLoading(false);
+      // Redirect to the email verification page
+      router.push("/emailverification");
+    }
   };
 
   return (
@@ -44,7 +70,7 @@ const SignUp: React.FC = () => {
       >
         <div className="mb-6 text-center">
           <h3 className="text-3xl font-bold tracking-tight">Get Started</h3>
-          <p>Please proide your details</p>
+          <p>Please provide your details</p>
         </div>
 
         <div className="grid gap-4">
@@ -55,9 +81,11 @@ const SignUp: React.FC = () => {
             <input
               id="name"
               name="name"
-              type="name"
+              type="text"
               required
               placeholder="John Doe"
+              value={formData.name}
+              onChange={handleInputChange}
               className="w-full mt-1 px-4 py-2 h-10 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400"
             />
           </div>
@@ -71,6 +99,8 @@ const SignUp: React.FC = () => {
               type="email"
               required
               placeholder="example@any.com"
+              value={formData.email}
+              onChange={handleInputChange}
               className="w-full mt-1 px-4 py-2 h-10 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400"
             />
           </div>
@@ -86,6 +116,8 @@ const SignUp: React.FC = () => {
                 type={passwordVisible ? "text" : "password"}
                 required
                 placeholder="********"
+                value={formData.password}
+                onChange={handleInputChange}
                 className="w-full px-4 py-2 h-10 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400"
               />
               <div
@@ -104,6 +136,11 @@ const SignUp: React.FC = () => {
             {loading ? "Creating..." : "Create Account"}
           </button>
 
+          {error && <p className="text-red-500 text-center mt-2">{error}</p>}
+          {message && (
+            <p className="text-green-500 text-center mt-2">{message}</p>
+          )}
+
           <div className="flex items-center my-2">
             <hr className="flex-grow border-black" />
             <span className="text-gray-600 px-4">Or Continue With</span>
@@ -117,7 +154,7 @@ const SignUp: React.FC = () => {
               <FaFacebookF color="#1877F2" size={28} />
             </button>
           </div>
-          <div className=" text-center">
+          <div className="text-center">
             <p className="text-gray-600">
               Have an account?{" "}
               <Link href="/login" className="text-orange-400 font-medium">

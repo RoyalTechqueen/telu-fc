@@ -29,11 +29,11 @@ const Footer: React.FC = () => {
               <ul className="text-black  font-medium">
                 <li className="mb-4">
                   <a href="#" className="hover:underline">
-                    Tournaments
+                    Events
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:underline">
+                  <a href="#gallery" className="hover:underline">
                     Gallery
                   </a>
                 </li>

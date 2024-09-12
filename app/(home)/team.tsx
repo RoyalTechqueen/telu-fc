@@ -8,7 +8,7 @@ export default function Teams() {
           Meet our team
         </h2>
         <div className="relative text-yellow-500 font-bold text-6xl opacity-10">
-          <h1>OUR TEAM</h1>
+          <h1>OUR MANAGERS</h1>
         </div>
 
         <div className="mt-8 flex flex-wrap justify-center gap-8">

@@ -28,26 +28,32 @@ const Header: React.FC = () => {
     >
       <div className="flex max-w-screen-8xl px-4 py-6 sm:px-6 justify-between items-center space-x-5">
         <div className="flex items-center">
-          <Image
-            src="/telu.png"
-            alt="logo"
-            className="rounded-xl"
-            width={75}
-            height={75}
-          />
+          <Link href="/">
+            <Image
+              src="/telu.png"
+              alt="logo"
+              className="rounded-xl"
+              width={75}
+              height={75}
+            />
+          </Link>
         </div>
-        <nav className="hidden sm:flex space-x-8 items-center text-xl">
+
+        {/* Navigation - Hidden on mobile and tablet screens */}
+        <nav className="hidden lg:flex space-x-8 items-center text-xl">
           <Link href="#home">Home</Link>
           <Link href="#about">About</Link>
           <Link href="#programs">Programs</Link>
+          <Link href="#players">Players</Link>
           <Link href="#gallery">Gallery</Link>
           <Link href="#contact">Contact</Link>
         </nav>
 
         <div className="flex items-center space-x-5">
-          <div className="hidden sm:flex sm:gap-5 items-center">
+          {/* Login and Get Started buttons - Hidden on mobile and tablet screens */}
+          <div className="hidden lg:flex lg:gap-5 items-center">
             <Link href="/login">
-              <span className="w-full px-4 py-3 rounded-full bg-gray-200 bg-gray-200 border hover:bg-gray-300">
+              <span className="w-full px-4 py-3 rounded-full bg-gray-200 border hover:bg-gray-300">
                 Login
               </span>
             </Link>
@@ -58,8 +64,10 @@ const Header: React.FC = () => {
             </Link>
           </div>
         </div>
+
+        {/* Menu toggle button - Visible only on mobile and tablet screens */}
         <button
-          className="block sm:hidden ml-4"
+          className="block lg:hidden ml-4"
           aria-label="Toggle Menu"
           onClick={() => setShowMenu(!showMenu)}
         >
@@ -70,10 +78,12 @@ const Header: React.FC = () => {
           )}
         </button>
       </div>
+
+      {/* Mobile and tablet menu */}
       <div
         className={`fixed top-0 left-0 h-full w-full bg-yellow-100 shadow-lg transform ${
           showMenu ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300 ease-in-out sm:hidden`}
+        } transition-transform duration-300 ease-in-out lg:hidden`}
       >
         <div className="flex justify-end p-4">
           <button
@@ -114,6 +124,13 @@ const Header: React.FC = () => {
             onClick={() => setShowMenu(false)}
           >
             Programs
+          </Link>
+          <Link
+            href="#players"
+            className="text-lg font-medium"
+            onClick={() => setShowMenu(false)}
+          >
+            Players
           </Link>
           <a
             href="#gallery"

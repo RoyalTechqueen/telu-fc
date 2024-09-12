@@ -1,43 +1,44 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
+import { useState, ChangeEvent, FormEvent } from "react";
 import Image from "next/image";
+import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const ContactPage: React.FC = () => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [message, setMessage] = useState("");
-  const [isSending, setIsSending] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    message: "",
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    setIsSending(true);
-
-    // Construct the custom message
-    const fullName = `${firstName} ${lastName}`;
-    const customMessage = `Hi, my name is ${fullName}. ${message}`;
-
-    // Encode the message and phone number for the WhatsApp API URL
-    const encodedMessage = encodeURIComponent(customMessage);
-    const whatsappUrl = `https://wa.me/447950967561?text=${encodedMessage}`;
-
-    // Open the WhatsApp URL in a new tab
-    window.open(whatsappUrl, "_blank");
-
-    setTimeout(() => {
-      setIsSending(false);
-      toast.success("Message sent successfully!");
-      setFirstName("");
-      setLastName("");
-      setPhone("");
-      setMessage("");
-    }, 2000);
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    emailjs
+      .send(
+        "service_w2y3aee",
+        "template_00vcadm",
+        formData,
+        "oTnHA69EAwtBl8aHI"
+      )
+      .then(() => {
+        setLoading(false);
+        toast.success("Message sent Succesfully!");
+        setFormData({ name: "", message: "" });
+      })
+      .catch(() => {
+        toast.error("Failed to send the message, please try again later.");
+      });
+  };
   return (
     <div
       className="scroll-mt-24 min-h-screen flex flex-col items-center justify-center mb-4"
@@ -73,8 +74,8 @@ const ContactPage: React.FC = () => {
                 <input
                   id="firstName"
                   type="text"
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
+                  value={formData.name}
+                  onChange={handleChange}
                   placeholder="Mohammad"
                   className="w-full p-3 border rounded-md focus:ring-yellow-500 focus:border-yellow-500 focus:outline-none"
                   required
@@ -90,8 +91,8 @@ const ContactPage: React.FC = () => {
                 <input
                   id="lastName"
                   type="text"
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
+                  value={formData.name}
+                  onChange={handleChange}
                   placeholder="Adebayo"
                   className="w-full p-3 border rounded-md focus:ring-yellow-500 focus:border-yellow-500 focus:outline-none"
                   required
@@ -108,8 +109,6 @@ const ContactPage: React.FC = () => {
               <input
                 id="phone"
                 type="tel"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
                 placeholder="+2341234567890"
                 className="w-full p-3 border rounded-md focus:ring-yellow-500 focus:border-yellow-500 focus:outline-none"
                 required
@@ -125,8 +124,8 @@ const ContactPage: React.FC = () => {
               <textarea
                 id="message"
                 rows={4}
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
+                value={formData.message}
+                onChange={handleChange}
                 placeholder="Enter your message here"
                 className="w-full p-3 border rounded-md focus:ring-yellow-500 focus:border-yellow-500 focus:outline-none"
                 required
@@ -134,12 +133,10 @@ const ContactPage: React.FC = () => {
             </div>
             <button
               type="submit"
-              className={`mt-6 w-full bg-yellow-500 text-white p-3 rounded-md hover:bg-yellow-600 transition ${
-                isSending ? "opacity-50 cursor-not-allowed" : ""
-              }`}
-              disabled={isSending}
+              className={`mt-6 w-full bg-yellow-500 text-white p-3 rounded-md hover:bg-yellow-600 transition`}
+              disabled={loading}
             >
-              {isSending ? "Sending..." : "Send Message"}
+              {loading ? "Sending..." : "Send Message"}
             </button>
           </form>
         </div>

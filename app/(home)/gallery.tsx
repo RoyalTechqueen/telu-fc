@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Gallery() {
   return (
@@ -10,10 +11,10 @@ export default function Gallery() {
         <p className="text-gray-700 mb-12">
           Explore our moments from training sessions and past matches.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="overflow-hidden rounded-lg shadow-lg">
             <Image
-              src="/match.jpg"
+              src="/telu13.jpg"
               alt="logo"
               className="rounded-xl"
               width={800}
@@ -22,7 +23,7 @@ export default function Gallery() {
           </div>
           <div className="overflow-hidden rounded-lg shadow-lg">
             <Image
-              src="/match.jpg"
+              src="/2.jpg"
               alt="logo"
               className="rounded-xl"
               width={800}
@@ -31,7 +32,7 @@ export default function Gallery() {
           </div>
           <div className="overflow-hidden rounded-lg shadow-lg">
             <Image
-              src="/match.jpg"
+              src="/1.jpg"
               alt="logo"
               className="rounded-xl"
               width={800}
@@ -40,7 +41,7 @@ export default function Gallery() {
           </div>
           <div className="overflow-hidden rounded-lg shadow-lg">
             <Image
-              src="/match.jpg"
+              src="/10.jpg"
               alt="logo"
               className="rounded-xl"
               width={800}
@@ -49,7 +50,7 @@ export default function Gallery() {
           </div>
           <div className="overflow-hidden rounded-lg shadow-lg">
             <Image
-              src="/match.jpg"
+              src="/11.jpg"
               alt="logo"
               className="rounded-xl"
               width={800}
@@ -58,13 +59,38 @@ export default function Gallery() {
           </div>
           <div className="overflow-hidden rounded-lg shadow-lg">
             <Image
-              src="/match.jpg"
+              src="/12.jpg"
               alt="logo"
               className="rounded-xl"
               width={800}
               height={1200}
             />
           </div>
+          <div className="overflow-hidden rounded-lg shadow-lg">
+            <Image
+              src="/7.jpg"
+              alt="logo"
+              className="rounded-xl"
+              width={800}
+              height={1200}
+            />
+          </div>
+          <div className="overflow-hidden rounded-lg shadow-lg">
+            <Image
+              src="/16.jpg"
+              alt="logo"
+              className="rounded-xl"
+              width={800}
+              height={1200}
+            />
+          </div>
+        </div>
+        <div className="flex justify-center mt-8">
+          <Link href="/gallery">
+            <button className="px-6 py-3 bg-yellow-500 text-white rounded-lg">
+              See More
+            </button>
+          </Link>
         </div>
       </div>
     </section>

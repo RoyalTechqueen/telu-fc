@@ -1,9 +1,10 @@
 import Hero from "./hero";
 import Header from "./header";
 import About from "./about";
-import Programs from "./programs";
 import Teams from "./team";
+import Players from "./playerssection";
 import Gallery from "./gallery";
+import Events from "./events";
 import ContactForm from "./contact";
 import Footer from "./footer";
 
@@ -12,9 +13,10 @@ export default function Home() {
     <div className="bg-yellow-50">
       <Header />
       <Hero />
+      <Events />
       <About />
-      <Programs />
       <Teams />
+      <Players />
       <Gallery />
       <ContactForm />
       <Footer />
