@@ -30,11 +30,11 @@ const Header: React.FC = () => {
         <div className="flex items-center">
           <Link href="/">
             <Image
-              src="/telu.png"
+              src="/logo.png"
               alt="logo"
               className="rounded-xl"
-              width={100}
-              height={100}
+              width={80}
+              height={80}
             />
           </Link>
         </div>
@@ -96,7 +96,7 @@ const Header: React.FC = () => {
         <nav className="flex flex-col items-center space-y-6 p-6">
           <div className="flex items-center">
             <Image
-              src="/telu.png"
+              src="/logo.png"
               alt="logo"
               className="rounded-xl"
               width={75}
@@ -117,7 +117,7 @@ const Header: React.FC = () => {
           >
             About
           </Link>
-          
+
           <Link
             href="#players"
             className="text-lg font-medium"

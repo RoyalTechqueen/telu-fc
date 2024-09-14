@@ -162,7 +162,7 @@ export default function PlayersPage() {
       <div className="flex items-center fixed top-4 left-0">
         <Link href="/">
           <Image
-            src="/telu.png"
+            src="/logo.png"
             alt="logo"
             className="rounded-xl"
             width={70}

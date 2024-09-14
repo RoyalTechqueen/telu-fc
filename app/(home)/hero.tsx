@@ -30,13 +30,13 @@ export default function Hero() {
         </Link>
       </div>
 
-      <div className="hidden lg:block lg:w-1/3">
+      <div className="hidden lg:block lg:w-1/3 ">
         <Image
-          src="/telu3.jpg"
+          src="/file.png"
           alt="Football"
-          width={700}
-          height={700}
-          className="object-cover opacity-80 rounded-lg"
+          width={400}
+          height={400}
+          className="object-cover mt-8  rounded-lg"
         />
       </div>
     </div>

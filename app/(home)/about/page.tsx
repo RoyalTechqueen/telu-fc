@@ -9,7 +9,7 @@ export default function AboutUs() {
       <div className="flex items-center fixed top-4 left-0">
         <Link href="/">
           <Image
-            src="/telu.png"
+            src="/logo.png"
             alt="logo"
             className="rounded-xl"
             width={70}
@@ -24,11 +24,10 @@ export default function AboutUs() {
             About Us
           </h1>
           <p className="text-lg max-w-2xl mx-auto">
-            Telu FC is a top-rated professional football club, based in
-            Iwo Osun, Nigeria, known for its excellence in nurturing young
-            football talents. Established in 2019, the club has quickly risen
-            to become one of the leading football training centers in the
-            country.
+            Telu FC is a top-rated professional football club, based in Iwo
+            Osun, Nigeria, known for its excellence in nurturing young football
+            talents. Established in 2019, the club has quickly risen to become
+            one of the leading football training centers in the country.
           </p>
         </div>
 
@@ -44,7 +43,7 @@ export default function AboutUs() {
             />
             <div>
               <h2 className="text-3xl font-semibold text-yellow-500 mb-4">
-                Telu Football Club 
+                Telu Football Club
               </h2>
               <p className="text-gray-700 mb-4">
                 Since its inception in 2019, Telu FC Academy has been dedicated
@@ -71,8 +70,8 @@ export default function AboutUs() {
           </h2>
           <p className="text-gray-700 mb-4">
             Unlike many academies around who were founded for the fun of it.
-            Telu Football Club is founded to project the next football stars
-            to the world with available standard training kits and loaded
+            Telu Football Club is founded to project the next football stars to
+            the world with available standard training kits and loaded
             educational and religious excellence. Our mission is simple and
             feasible, it is a mission to better the lives of the young talents,
             to set the pace for them and help them in find their feet where

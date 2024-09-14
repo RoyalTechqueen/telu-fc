@@ -27,36 +27,34 @@ const AnniversaryEvent: React.FC = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
         },
       },
       {
         breakpoint: 1400,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 3,
         },
       },
     ],
   };
 
   return (
-    <section className="py-12">
+    <section className="py-12 overflow-x-hidden">
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold">Upcoming Event</h2>
       </div>
-      <div className="container mx-auto px-4 mb-8">
+      <div className="relative max-w-[95%] mx-auto">
         <Slider {...sliderSettings}>
           {images.map((src, index) => (
-            <div
-              key={index}
-              className="relative w-full h-48 md:h-[400px] xl:h-[700px]"
-            >
+            <div key={index} className="relative px-2">
               <Image
                 src={src}
                 alt={`Anniversary Image ${index + 1}`}
-                layout="fill"
+                width={400}
+                height={400}
                 objectFit="cover"
-                className="rounded-xl"
+                className="w-full h-full"
               />
             </div>
           ))}
